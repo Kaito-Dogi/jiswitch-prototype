@@ -1,5 +1,4 @@
 {
-  "extends": "@tsconfig/recommended/tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -14,9 +13,6 @@
     "plugins": [
       {
         "name": "next"
-      },
-      {
-        "name": "eslint-plugin-import-access"
       }
     ],
     "paths": {
