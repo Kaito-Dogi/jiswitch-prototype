@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["Importability", "jiswitch", "tailwindcss"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint",
+    "source.addMissingImports"
+  ]
+}
