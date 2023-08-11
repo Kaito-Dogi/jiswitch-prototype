@@ -17,4 +17,5 @@
 body {
   color: var(--color);
   background: var(--background-color);
+  height: 100dvh;
 }
