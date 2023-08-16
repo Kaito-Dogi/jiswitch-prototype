@@ -2,16 +2,16 @@ import { ChangeEvent, FC } from "react";
 
 type Props = {
   value: string;
-  onSubmit: () => void;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onSendButtonClick: () => void;
 };
 
 /**
  * @package
  */
-export const ChatForm: FC<Props> = ({ onChange, onSubmit, value }) => {
+export const ChatForm: FC<Props> = ({ onChange, onSendButtonClick, value }) => {
   return (
-    <form onSubmit={onSubmit} className="flex w-full max-w-screen-sm gap-4">
+    <form className="flex w-full max-w-screen-sm gap-4">
       <input
         id="message"
         name="message"
@@ -22,7 +22,8 @@ export const ChatForm: FC<Props> = ({ onChange, onSubmit, value }) => {
         className="flex-1 rounded-sm p-2"
       />
       <button
-        type="submit"
+        type="button"
+        onClick={onSendButtonClick}
         className="rounded-sm bg-secondary p-2 px-4 text-white"
       >
         送信

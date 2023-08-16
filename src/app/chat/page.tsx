@@ -14,7 +14,7 @@ export default function Chat() {
     setMessage(e.target.value);
   };
 
-  const onSubmit = () => {
+  const onSendButtonClick = () => {
     const newMessage: Message = { content: message, sender: "user" };
     setMessages((prev) => [...prev, newMessage]);
 
@@ -33,8 +33,8 @@ export default function Chat() {
       <div className="absolute inset-x-0 bottom-0 m-2 flex justify-center">
         <ChatForm
           value={message}
-          onSubmit={onSubmit}
           onChange={onChange}
+          onSendButtonClick={onSendButtonClick}
         ></ChatForm>
       </div>
     </main>
