@@ -24,8 +24,10 @@ export default function Chat() {
 
   return (
     <main className="w-full px-2 pt-4">
-      <ChatMessageList messages={messages} />
-      <div className="absolute inset-x-0 bottom-0 m-2 flex justify-center">
+      <div className="h-[90vh]">
+        <ChatMessageList messages={messages} />
+      </div>
+      <div className="fixed inset-x-0 bottom-0 m-2 flex justify-center">
         <ChatForm onSendButtonClick={onSendButtonClick}></ChatForm>
       </div>
     </main>
