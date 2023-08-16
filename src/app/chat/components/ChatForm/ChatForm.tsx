@@ -1,15 +1,29 @@
-import { ChangeEvent, FC } from "react";
+"use client";
+
+import { ChangeEvent, FC, useState } from "react";
 
 type Props = {
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  onSendButtonClick: () => void;
+  onSendButtonClick: (message: string) => void;
 };
 
 /**
  * @package
  */
-export const ChatForm: FC<Props> = ({ onChange, onSendButtonClick, value }) => {
+export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
+  const [message, setMessage] = useState("");
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setMessage(e.target.value);
+  };
+
+  const onClick = () => {
+    if (!message) return;
+
+    onSendButtonClick(message);
+
+    setMessage("");
+  };
+
   return (
     <form className="flex w-full max-w-screen-sm gap-4">
       <label>
@@ -18,7 +32,7 @@ export const ChatForm: FC<Props> = ({ onChange, onSendButtonClick, value }) => {
       </label>
       <input
         name="message"
-        value={value}
+        value={message}
         onChange={onChange}
         type="text"
         placeholder="メッセージを入力…"
@@ -26,7 +40,7 @@ export const ChatForm: FC<Props> = ({ onChange, onSendButtonClick, value }) => {
       />
       <button
         type="button"
-        onClick={onSendButtonClick}
+        onClick={onClick}
         className="rounded-sm bg-secondary p-2 px-4 text-white"
       >
         送信
