@@ -1,1 +1,6 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+next-env.d.ts
+**/amplify/*
 **/aws-exports.js
