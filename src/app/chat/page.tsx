@@ -15,6 +15,8 @@ export default function Chat() {
   };
 
   const onSendButtonClick = () => {
+    if (!message) return;
+
     const newMessage: Message = { content: message, sender: "user" };
     setMessages((prev) => [...prev, newMessage]);
 
@@ -25,6 +27,8 @@ export default function Chat() {
       };
       setMessages((prev) => [...prev, replyMessage]);
     }, 1000);
+
+    setMessage("");
   };
 
   return (
