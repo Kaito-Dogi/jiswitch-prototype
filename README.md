@@ -11,4 +11,7 @@ npm run dev
 
 ## デプロイ
 
-TBD
+main ブランチに変更があると、自動でデプロイされる
+AWS Amplify console　は[こちら](https://us-east-1.console.aws.amazon.com/amplify/home?region=us-east-1#/d1z0dp7bcprxd5)
+
+公開 URL：https://main.d1z0dp7bcprxd5.amplifyapp.com
