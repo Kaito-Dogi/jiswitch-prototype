@@ -14,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className="flex justify-center">
+        <div className="max-w-screen-sm">{children}</div>
+      </body>
     </html>
   );
 }
