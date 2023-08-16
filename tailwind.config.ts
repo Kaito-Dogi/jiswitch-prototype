@@ -12,6 +12,8 @@ const config: Config = {
       black: "#222222",
       gray: "#e5e5e5",
       primary: "#07c655",
+      secondary: "#4A8FE7",
+      error: "#F2545B",
     },
   },
   plugins: [],
