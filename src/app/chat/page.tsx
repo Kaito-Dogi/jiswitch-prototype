@@ -9,14 +9,14 @@ import { Message } from "./models/Message";
 export default function Chat() {
   const [messages, setMessages] = useState(initialMessages);
 
-  const onSendButtonClick = (message: string) => {
-    const newMessage: Message = { content: message, sender: "user" };
+  const onSendButtonClick = (newMessage: Message) => {
     setMessages((prev) => [...prev, newMessage]);
 
     setTimeout(() => {
       const replyMessage: Message = {
         content: "じすいっちからの返信",
         sender: "jiswitch",
+        images: [],
       };
       setMessages((prev) => [...prev, replyMessage]);
     }, 1000);
@@ -36,13 +36,16 @@ const initialMessages: Message[] = [
   {
     content: "おつかれ〜",
     sender: "jiswitch",
+    images: [],
   },
   {
     content: "オムライス作ったよ！",
     sender: "user",
+    images: [],
   },
   {
     content: "卵がトロトロで美味しそう！ケチャップで書いてる文字もかわいい！",
     sender: "jiswitch",
+    images: [],
   },
 ];

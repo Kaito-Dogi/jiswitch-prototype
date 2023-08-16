@@ -2,8 +2,10 @@
 
 import { ChangeEvent, FC, useState } from "react";
 
+import { Message } from "../../models/Message";
+
 type Props = {
-  onSendButtonClick: (message: string) => void;
+  onSendButtonClick: (message: Message) => void;
 };
 
 /**
@@ -47,14 +49,20 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
   const onClick = () => {
     if (!message) return;
 
-    onSendButtonClick(message);
+    const newMessage: Message = {
+      content: message,
+      sender: "user",
+      images: images,
+    };
+    onSendButtonClick(newMessage);
 
     setMessage("");
+    setImages([]);
   };
 
   return (
-    <div className="flex flex-col justify-center gap-2">
-      <div className="flex w-full max-w-screen-sm gap-4 overflow-x-scroll">
+    <div className="flex w-full max-w-screen-sm flex-col justify-center gap-2">
+      <div className="flex gap-4 overflow-x-scroll">
         {images.map((image, index) => {
           return (
             !!image && (
@@ -69,7 +77,7 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
           );
         })}
       </div>
-      <form className="flex w-full max-w-screen-sm gap-4">
+      <form className="flex gap-4">
         <label>
           <p className="py-2">📷</p>
           <input
@@ -92,7 +100,7 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
         <button
           type="button"
           onClick={onClick}
-          className="bg-secondary rounded-sm p-2 px-4 text-white"
+          className="rounded-sm bg-secondary p-2 px-4 text-white"
         >
           送信
         </button>

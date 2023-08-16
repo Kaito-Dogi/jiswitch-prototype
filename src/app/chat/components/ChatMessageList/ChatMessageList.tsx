@@ -15,7 +15,11 @@ export const ChatMessageList: FC<Props> = ({ messages }) => {
     <div className="flex flex-col gap-4">
       {messages.map((message, index) => {
         return (
-          <ChatMessage key={index} fromUser={message.sender === "user"}>
+          <ChatMessage
+            key={index}
+            fromUser={message.sender === "user"}
+            images={message.images}
+          >
             {message.content}
           </ChatMessage>
         );
