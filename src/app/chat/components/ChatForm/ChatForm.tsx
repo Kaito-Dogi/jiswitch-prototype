@@ -12,8 +12,11 @@ type Props = {
 export const ChatForm: FC<Props> = ({ onChange, onSendButtonClick, value }) => {
   return (
     <form className="flex w-full max-w-screen-sm gap-4">
+      <label>
+        <p className="py-2">📷</p>
+        <input name="image" type="file" accept="image/*" className="hidden" />
+      </label>
       <input
-        id="message"
         name="message"
         value={value}
         onChange={onChange}
