@@ -10,7 +10,7 @@
     "prettier"
   ],
   "plugins": [
-    "sort-keys-custom-order",
+    "sort-destructure-keys",
     "simple-import-sort",
     "import",
     "unused-imports",
@@ -18,8 +18,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "sort-keys-custom-order/object-keys": "error",
-    "sort-keys-custom-order/type-keys": "error",
+    "sort-destructure-keys/sort-destructure-keys": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/first": "error",
