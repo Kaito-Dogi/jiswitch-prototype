@@ -6,6 +6,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
     "prettier"
   ],
@@ -14,6 +15,7 @@
     "simple-import-sort",
     "import",
     "unused-imports",
+    "tailwindcss",
     "import-access",
     "@typescript-eslint"
   ],
