@@ -2,20 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color: #165a2b;
-  --background-color: #e3a4cf;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color: #e3a4cf;
-    --background-color: #165a2b;
-  }
-}
-
 body {
-  color: var(--color);
-  background: var(--background-color);
   height: 100dvh;
+  color: "#222222";
 }
