@@ -9,6 +9,7 @@
     "prettier"
   ],
   "plugins": [
+    "sort-keys-custom-order",
     "simple-import-sort",
     "import",
     "unused-imports",
@@ -16,12 +17,13 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "sort-keys-custom-order/object-keys": "error",
+    "sort-keys-custom-order/type-keys": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
-    "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "import-access/jsdoc": "error"
   },
