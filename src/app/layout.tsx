@@ -3,8 +3,8 @@ import "./globals.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "jiswitch prototype",
   description: "jiswitch prototype",
+  title: "jiswitch prototype",
 };
 
 export default function RootLayout({

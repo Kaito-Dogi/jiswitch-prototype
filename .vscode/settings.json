@@ -1,8 +1,12 @@
 {
   "cSpell.words": ["Importability", "jiswitch", "tailwindcss"],
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": [
-    "source.fixAll.eslint",
-    "source.addMissingImports"
-  ]
+    "source.addMissingImports",
+    "source.fixAll.eslint"
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }
