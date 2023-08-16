@@ -2,7 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": { "project": "./tsconfig.json" },
-  "ignorePatterns": ["*.config.js"],
+  "ignorePatterns": ["*.config.js", "*.config.ts"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
