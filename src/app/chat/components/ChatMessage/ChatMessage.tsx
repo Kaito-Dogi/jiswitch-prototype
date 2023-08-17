@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 
 type Props = {
@@ -34,8 +35,14 @@ const Images: FC<{ images: (string | ArrayBuffer | null | undefined)[] }> = ({
     <div className="grid grid-cols-2 gap-1">
       {images.map((image, index) => {
         return (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={image as string} alt="画像" key={index} className="w-20" />
+          <Image
+            src={image as string}
+            alt="画像"
+            width={0}
+            height={0}
+            key={index}
+            className="h-20 w-20 object-cover"
+          />
         );
       })}
     </div>

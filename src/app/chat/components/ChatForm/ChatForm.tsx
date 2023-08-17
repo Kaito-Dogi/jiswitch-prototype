@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ChangeEvent, FC, useState } from "react";
 
 import { Message } from "../../models/Message";
@@ -66,12 +67,13 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
         {images.map((image, index) => {
           return (
             !!image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={image as string}
-                alt="画像のプレビュー"
+                alt="画像"
+                width={0}
+                height={0}
                 key={index}
-                className="h-20"
+                className="h-20 w-20 object-cover"
               />
             )
           );
