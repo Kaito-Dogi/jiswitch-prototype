@@ -23,8 +23,8 @@ export default function Chat() {
   };
 
   return (
-    <main className="w-full px-2 pt-4">
-      <div className="h-[90vh]">
+    <main className="w-full px-2">
+      <div className="h-[92dvh]">
         <ChatMessageList messages={messages} />
       </div>
       <div className="fixed inset-x-0 bottom-0 m-2 flex justify-center">
