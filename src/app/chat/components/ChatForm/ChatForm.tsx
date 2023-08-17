@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { ChangeEvent, FC, useState } from "react";
 
 import { Message } from "../../models/Message";
+import { ChatPreviewImage } from "./ChatPreviewImage";
 
 type Props = {
   onSendButtonClick: (message: Message) => void;
@@ -63,22 +63,7 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
 
   return (
     <div className="flex w-full max-w-screen-sm flex-col justify-center gap-2">
-      <div className="flex gap-4 overflow-x-scroll">
-        {images.map((image, index) => {
-          return (
-            !!image && (
-              <Image
-                src={image as string}
-                alt="画像"
-                width={0}
-                height={0}
-                key={index}
-                className="h-20 w-20 object-cover"
-              />
-            )
-          );
-        })}
-      </div>
+      <ChatPreviewImage images={images as Message["images"]} />
       <form className="flex gap-4">
         <label>
           <p className="py-2">📷</p>
