@@ -9,19 +9,18 @@ type Props = {
  * @package
  */
 export const TextField: FC<Props> = ({ message, setMessage }) => {
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
   return (
-    <textarea rows={1} className="h-fit grow rounded-sm bg-lightGray p-2">
-      <input
-        name="message"
-        type="text"
-        value={message}
-        placeholder="メッセージを入力…"
-        onChange={onChange}
-      />
-    </textarea>
+    <textarea
+      name="message"
+      value={message}
+      placeholder="メッセージを入力…"
+      onChange={onChange}
+      rows={1}
+      className="grow rounded-sm bg-lightGray p-2"
+    />
   );
 };
