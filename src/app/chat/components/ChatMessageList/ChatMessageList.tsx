@@ -1,7 +1,10 @@
+"use client";
+
 import { FC } from "react";
 
 import { Message } from "../../models/Message";
 import { ChatMessage } from "../ChatMessage";
+import { useScrollToBottom } from "./useScrollToBottom";
 
 type Props = {
   messages: Message[];
@@ -11,8 +14,10 @@ type Props = {
  * @package
  */
 export const ChatMessageList: FC<Props> = ({ messages }) => {
+  const bottomRef = useScrollToBottom(messages);
+
   return (
-    <div className="flex h-full flex-col gap-4 overflow-y-scroll">
+    <div className="flex h-full flex-col gap-4 overflow-y-scroll pt-2">
       {messages.map((message, index) => {
         return (
           <ChatMessage
@@ -24,6 +29,7 @@ export const ChatMessageList: FC<Props> = ({ messages }) => {
           </ChatMessage>
         );
       })}
+      <div ref={bottomRef}></div>
     </div>
   );
 };
