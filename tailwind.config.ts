@@ -12,7 +12,7 @@ const config: Config = {
       black: "#222222",
       gray: "#e5e5e5",
       lightGray: "#F5F5F5",
-      primary: "#07c655",
+      primary: "#79E278",
       secondary: "#4A8FE7",
       error: "#F2545B",
     },
