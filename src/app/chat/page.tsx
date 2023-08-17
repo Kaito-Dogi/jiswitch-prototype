@@ -12,9 +12,10 @@ export default function Chat() {
   const onSendButtonClick = (newMessage: Message) => {
     setMessages((prev) => [...prev, newMessage]);
 
+    // TODO: API から返信を受け取る
     setTimeout(() => {
       const replyMessage: Message = {
-        content: "じすいっちからの返信",
+        content: "（じすいっちからの返信）",
         sender: "jiswitch",
         images: [],
       };
@@ -34,6 +35,7 @@ export default function Chat() {
   );
 }
 
+// TODO: 後ほど削除
 const initialMessages: Message[] = [
   {
     content: "おつかれ〜",

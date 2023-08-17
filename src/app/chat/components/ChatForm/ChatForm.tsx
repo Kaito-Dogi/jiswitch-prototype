@@ -1,10 +1,11 @@
 "use client";
 
-import { ChangeEvent, FC, useState } from "react";
+import { FC, useState } from "react";
 
 import { Message } from "../../models/Message";
 import { ImagePicker } from "./ImagePicker";
 import { PreviewImage } from "./PreviewImage";
+import { TextField } from "./TextField";
 
 type Props = {
   onSendButtonClick: (message: Message) => void;
@@ -16,10 +17,6 @@ type Props = {
 export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
   const [message, setMessage] = useState("");
   const [images, setImages] = useState<Message["images"]>([]);
-
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setMessage(e.target.value);
-  };
 
   const onClick = () => {
     if (!message && images.length === 0) return;
@@ -41,14 +38,7 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
       <PreviewImage images={images as Message["images"]} />
       <form className="flex gap-4">
         <ImagePicker setImages={setImages} />
-        <input
-          name="message"
-          type="text"
-          value={message}
-          placeholder="メッセージを入力…"
-          onChange={onChange}
-          className="grow rounded-sm p-2"
-        />
+        <TextField message={message} setMessage={setMessage} />
         <button
           type="button"
           onClick={onClick}
