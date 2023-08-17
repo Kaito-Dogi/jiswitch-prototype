@@ -95,7 +95,7 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
           value={message}
           placeholder="メッセージを入力…"
           onChange={onChangeMessage}
-          className="flex-1 rounded-sm p-2"
+          className="grow rounded-sm p-2"
         />
         <button
           type="button"
