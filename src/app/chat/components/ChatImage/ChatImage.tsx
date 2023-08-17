@@ -15,8 +15,8 @@ export const ChatImage: FC<Props> = ({ src }) => {
     <Image
       src={src as string}
       alt="画像"
-      width={0}
-      height={0}
+      width={80}
+      height={80}
       className="h-20 w-20 rounded-sm object-cover"
     />
   );
