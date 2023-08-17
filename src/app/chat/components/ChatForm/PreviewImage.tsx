@@ -10,7 +10,7 @@ type Props = {
 /**
  * @package
  */
-export const ChatPreviewImage: FC<Props> = ({ images }) => {
+export const PreviewImage: FC<Props> = ({ images }) => {
   return (
     <div className="flex gap-2 overflow-x-scroll">
       {images.map((image, index) => {
