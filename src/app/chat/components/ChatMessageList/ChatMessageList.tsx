@@ -1,9 +1,10 @@
 "use client";
 
-import { FC, useEffect, useRef } from "react";
+import { FC } from "react";
 
 import { Message } from "../../models/Message";
 import { ChatMessage } from "../ChatMessage";
+import { useScrollToBottom } from "./useScrollToBottom";
 
 type Props = {
   messages: Message[];
@@ -13,11 +14,7 @@ type Props = {
  * @package
  */
 export const ChatMessageList: FC<Props> = ({ messages }) => {
-  const endOfMessagesRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  const bottomRef = useScrollToBottom(messages);
 
   return (
     <div className="flex h-full flex-col gap-4 overflow-y-scroll pt-2">
@@ -32,7 +29,7 @@ export const ChatMessageList: FC<Props> = ({ messages }) => {
           </ChatMessage>
         );
       })}
-      <div ref={endOfMessagesRef}></div>
+      <div ref={bottomRef}></div>
     </div>
   );
 };
