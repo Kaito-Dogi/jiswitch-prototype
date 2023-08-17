@@ -25,7 +25,7 @@ export const ImagePicker: FC<Props> = ({ setImages }) => {
       // 画像読み込み後に画像を保持
       reader.onload = (pe: ProgressEvent<FileReader>) => {
         const result = pe.target?.result;
-        result && setImages((prev) => [...prev, result]);
+        !!result && setImages((prev) => [...prev, result]);
       };
 
       // 画像を読み込み

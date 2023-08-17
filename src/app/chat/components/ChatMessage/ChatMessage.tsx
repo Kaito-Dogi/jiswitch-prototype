@@ -21,7 +21,7 @@ export const ChatMessage: FC<Props> = ({ children, fromUser, images }) => {
           })}
         </div>
       }
-      {children && (
+      {!!children && (
         <p className="max-w-[70%] rounded-l-lg rounded-tr-lg bg-primary p-2">
           {children}
         </p>

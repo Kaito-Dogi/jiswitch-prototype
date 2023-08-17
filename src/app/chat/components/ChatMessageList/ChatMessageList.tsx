@@ -17,7 +17,7 @@ export const ChatMessageList: FC<Props> = ({ messages }) => {
   const bottomRef = useScrollToBottom(messages);
 
   return (
-    <div className="flex h-full flex-col gap-4 overflow-y-scroll pt-2">
+    <div className="flex h-full flex-col gap-4 overflow-y-scroll px-2 pt-2">
       {messages.map((message, index) => {
         return (
           <ChatMessage

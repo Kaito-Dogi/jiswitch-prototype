@@ -34,15 +34,19 @@ export const ChatForm: FC<Props> = ({ onSendButtonClick }) => {
   };
 
   return (
-    <div className="flex w-full max-w-screen-sm flex-col justify-center gap-2">
-      <PreviewImage images={images as Message["images"]} />
-      <form className="flex gap-4">
+    <div className="flex w-full max-w-screen-sm flex-col gap-2">
+      <div className="mx-2">
+        {!!images.length && (
+          <PreviewImage images={images as Message["images"]} />
+        )}
+      </div>
+      <form className="flex gap-4 bg-white p-2">
         <ImagePicker setImages={setImages} />
         <TextField message={message} setMessage={setMessage} />
         <button
           type="button"
           onClick={onClick}
-          className="rounded-sm bg-secondary p-2 px-4 text-white"
+          className="rounded-sm bg-secondary px-4 py-2 text-white"
         >
           送信
         </button>

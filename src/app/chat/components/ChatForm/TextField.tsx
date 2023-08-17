@@ -14,13 +14,14 @@ export const TextField: FC<Props> = ({ message, setMessage }) => {
   };
 
   return (
-    <input
-      name="message"
-      type="text"
-      value={message}
-      placeholder="メッセージを入力…"
-      onChange={onChange}
-      className="grow rounded-sm p-2"
-    />
+    <textarea rows={1} className="h-fit grow rounded-sm bg-lightGray p-2">
+      <input
+        name="message"
+        type="text"
+        value={message}
+        placeholder="メッセージを入力…"
+        onChange={onChange}
+      />
+    </textarea>
   );
 };
