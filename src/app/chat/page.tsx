@@ -24,11 +24,11 @@ export default function Chat() {
   };
 
   return (
-    <main className="w-full px-2">
-      <div className="h-[92dvh]">
+    <main className="w-full bg-[#93AAD4]">
+      <div className="h-[100dvh] pb-12">
         <ChatMessageList messages={messages} />
       </div>
-      <div className="fixed inset-x-0 bottom-0 m-2 flex justify-center">
+      <div className="fixed inset-x-0 bottom-0 flex justify-center">
         <ChatForm onSendButtonClick={onSendButtonClick}></ChatForm>
       </div>
     </main>
