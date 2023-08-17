@@ -22,14 +22,14 @@ export const ChatMessage: FC<Props> = ({ children, fromUser, images }) => {
         </div>
       }
       {!!children && (
-        <p className="max-w-[70%] rounded-l-lg rounded-tr-lg bg-primary p-2">
+        <p className="max-w-[70%] whitespace-pre-wrap rounded-l-lg rounded-tr-lg bg-primary p-2">
           {children}
         </p>
       )}
     </div>
   ) : (
     <div className="flex justify-start">
-      <p className="max-w-[70%] rounded-r-lg rounded-tl-lg bg-white p-2">
+      <p className="max-w-[70%] whitespace-pre-wrap rounded-r-lg rounded-tl-lg bg-white p-2">
         {children}
       </p>
     </div>
