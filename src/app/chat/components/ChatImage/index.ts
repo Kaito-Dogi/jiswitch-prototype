@@ -1,0 +1,1 @@
+export { ChatImage } from "./ChatImage";
